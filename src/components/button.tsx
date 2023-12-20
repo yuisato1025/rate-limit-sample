@@ -1,6 +1,6 @@
 'use client';
 
-import { FC, useTransition } from 'react';
+import { FC, useState, useTransition } from 'react';
 import { process } from '@/server-actions/action';
 
 interface ButtonProps {}
@@ -13,7 +13,7 @@ export const Button: FC<ButtonProps> = () => {
       {isPending ? (
         <button
           onClick={() => startTransition(() => process())}
-          className="border-2 py-2 px-3 bg-slate-400 text-white rounded-lg w-[250px]"
+          className="border-2 py-2 px-3 bg-slate-400 text-white rounded-lg w-[250px] h-[50px]"
           disabled={true}
         >
           処理中
@@ -21,7 +21,7 @@ export const Button: FC<ButtonProps> = () => {
       ) : (
         <button
           onClick={() => startTransition(() => process())}
-          className="border-2 py-2 px-3 bg-slate-800 text-white rounded-lg w-[250px]"
+          className="border-2 py-2 px-3 bg-slate-800 text-white rounded-lg w-[250px] h-[50px]"
         >
           送信
         </button>
